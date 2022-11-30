@@ -1,0 +1,159 @@
+<template>
+    <lightning-spinner
+        class="slds-is-fixed slds-align_absolute-center"
+        if:true={showSpinner}
+        alternative-text="Loading..."
+        size="medium"
+        variant="brand"
+
+    ></lightning-spinner>
+    
+    <div class="c-container">
+        <lightning-layout multiple-rows vertical-align="flex-start" class="x-medium">
+            <lightning-layout-item padding="around-small" size="6" flexibility="auto">
+                <div class="page-section page-right">
+                    <h6>About</h6>
+                    <p class="text-justify">
+                        Hero Cycles is a part of the HMC Group with a $ 1.2 bn asset base and over 7500 people across
+                        the
+                        globe.
+                        Incorporated in 1956, Hero Cycles Limited is the largest integrated cycle manufacturer in the
+                        world.
+                        The
+                        company has a manufacturing capacity of 7.5 million bicycles per year,
+                        a highly integrated plant in Ludhiana (Punjab) Ghaziabad (UP), and Bihta (Bihar) and a state of
+                        the
+                        art
+                        manufacturing facility in Sri Lanka as well
+                    </p>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="2">
+                <div class="page-section page-main">
+                    <h6>Related Items</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">C7+</a></li>
+                        <li><a href="#">DUDE 26T 21SPD DD</a></li>
+                        <li><a href="#">COLT 26T FS VB</a></li>
+                        <li><a href="#">GUNNER 24T</a></li>
+                        <li><a href="#">MISS INDIA PETAL 26T</a></li>
+                        <li><a href="#">HUSTLE 27.5T</a></li>
+                    </ul>
+                </div>
+            </lightning-layout-item>
+            <!-- <lightning-layout-item padding="around-small" size="2">
+                <div class="page-section page-main">
+                    <h6>Related Items</h6>
+                    <ul class="footer-links">
+                        <li><a href="#">C7+</a></li>
+                        <li><a href="#">DUDE 26T 21SPD DD</a></li>
+                        <li><a href="#">COLT 26T FS VB</a></li>
+                        <li><a href="#">GUNNER 24T</a></li>
+                        <li><a href="#">MISS INDIA PETAL 26T</a></li>
+                        <li><a href="#">HUSTLE 27.5T</a></li>
+                    </ul>
+                </div>
+            </lightning-layout-item> -->
+            <lightning-layout-item padding="around-small" size="2">
+                <div class="header-column">
+                    <h6 class="slds-m-bottom_small">Contact With US</h6>
+                    <div class="socialFooter">
+                        <a href="https://www.facebook.com/HeroCyclesOfficial/" class="socialLink" target="_blank">
+                            <img src="https://i.postimg.cc/HnnjTzjf/facebook.png" width="36px" />
+                        </a>
+                        <a href="https://twitter.com/Hero_Cycles?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
+                            class="socialLink" target="_blank">
+                            <img src="https://i.postimg.cc/8PnWzGsn/twitter.png" width="36px"
+                                class="slds-m-horizontal_small" />
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCunP-Qd8LqLgQCWPdhqs1tQ" class="socialLink"
+                            target="_blank">
+                            <img src="https://i.postimg.cc/BZzQ8ncD/youtube.png" width="36px" />
+                        </a>
+                    </div>
+                </div>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small" size="2">
+                <div class="img-con">
+                    <img src="https://www.herocycles.com/admin/public/uploads/setting/5e75c86d77c28EmCt8todOh.png"
+                        alt="Hero Cycles Logo" width="120px">
+                    <div class="sign-Up" style="margin-top: 20px;">
+                        <lightning-button variant="brand" label=contactUS title=contactUS class="slds-p-vertical_xx-small validateBtn" onclick={openModal}>
+                        </lightning-button>
+                    </div>
+
+                    <!--Use template if:true to display/hide popup based on isModalOpen value-->
+                    <template if:true={isModalOpen}>
+                        <!-- Modal/Popup Box LWC starts here -->
+                        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                            aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                            <div class="slds-modal__container">
+                                <!-- Modal/Popup Box LWC header here -->
+                                <header class="slds-modal__header">
+                                    <button
+                                        class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                                        title="Close" onclick={closeModal}>
+                                        <lightning-icon icon-name="utility:close" alternative-text="close"
+                                            variant="inverse" size="small"></lightning-icon>
+                                        <span class="slds-assistive-text">Close</span>
+                                    </button>
+                                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate"> Contact Us</h2>
+                                    <img src="https://i.postimg.cc/BZ2BbSfq/Png-Item-723677.png" alt="" srcset=""
+                                        width="71px">
+
+                                </header>
+                                <!-- Modal/Popup Box LWC body starts here -->
+                                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                                    <div class="container-fluid">
+                                        <div if:true={isloginUser}>
+                                            <div class="form-group slds-m-bottom_medium slds-input-has-icon slds-input-has-icon_left">
+                                                <lightning-input class="custom-input-class" data-field='FirstName' label='First Name' required type="text"
+                                                    placeholder="Enter Fisrt Name">
+                                                </lightning-input>
+                                            </div>
+                                            <div class="form-group slds-m-bottom_medium slds-input-has-icon slds-input-has-icon_left">
+                                                <lightning-input class="custom-input-class" data-field='LastName' label='Last Name' required type="text"
+                                                    placeholder="Enter Last Name">
+                                                </lightning-input>
+                                            </div>
+                                            <div class="form-group slds-m-bottom_medium slds-input-has-icon slds-input-has-icon_left">
+                                                <lightning-input class="custom-input-class" data-field='Company' label="Comapny" required type="text"
+                                                    placeholder="Enter Company Name">
+                                                </lightning-input>
+                                            </div>
+                                            <div class="form-group slds-m-bottom_medium slds-input-has-icon slds-input-has-icon_left">
+                                                <lightning-input type="email" label="Email" class="custom-input-class" data-field='Email' required
+                                                    placeholder="Enter Email">
+                                                </lightning-input>
+                                            </div>
+                                        </div>
+                                        <div class="form-group slds-m-bottom_medium slds-input-has-icon slds-input-has-icon_left">
+                                            <lightning-textarea name="Comments" required data-field='Comment'  placeholder="compose your Comment" label="Comment" maxlength="140" message-when-too-long="A maximum of 140 characters are allowed in a tweet." message-when-value-missing="An empty tweet cannot be posted." ></lightning-textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Modal/Popup Box LWC footer starts here -->
+                                <footer class="slds-modal__footer">
+                                    <button class="slds-button slds-button_neutral" onclick={closeModal}
+                                        title="Cancel">Cancel</button>
+                                    <button class="slds-button slds-button_brand" onclick={submitDetails}
+                                        title="Send" onsuccess={closeModal}>Contact</button>
+                                </footer>
+                            </div>
+                        </section>
+                        <div class="slds-backdrop slds-backdrop_open"></div>
+                    </template>
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+        <hr>
+        <div class="conatainer slds-size_3-of-3">
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col">
+                    <p class="copyright-text"> &copy; Copyrights Hero Cycles Ltd 2019 | All Rights Reserved
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

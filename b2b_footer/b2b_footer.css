@@ -1,0 +1,41 @@
+.c-container{
+    background-color: black;
+    padding: 1rem;
+    font-size: 1rem;
+}
+h6{
+    color: #d01f25;
+}
+p,a{
+    color: #fff;
+}
+.text-justify{
+    padding: 0.8rem 1.2rem 0px 0px;
+}
+.text-justify:first-letter{
+    text-transform: capitalize;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+.img-con {
+    display: flex;
+    flex-direction: column;
+}
+.validateBtn{
+    margin-top: 0.8rem;
+    --sds-c-button-brand-color-background: #d01f25;
+    --slds-c-button-brand-color-background-hover:#3c1416;;
+    --slds-c-button-brand-color-border:#d01f25;
+    --slds-c-button-brand-color-border-hover:#d01f25;
+    --slds-c-button-radius-border:2px;
+}
+.copyright-text{
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+    opacity: .25;
+}
+.slds-modal__header{
+    display: flex;
+    justify-content: space-evenly;
+}
